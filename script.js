@@ -11,9 +11,6 @@ function generateQR() {
     "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" +
     encodedText;
 
-  var img = document.createElement("img");
+  var img = document.getElementById("qrcode-container");
   img.src = apiUrl;
-
-  var container = document.getElementById("qrcode-container");
-  container.appendChild(img);
 }

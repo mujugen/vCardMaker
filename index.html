@@ -23,6 +23,7 @@
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
 
     <title>vCardMaker</title>
 
@@ -640,25 +641,11 @@
           <div class="mt-3">
             <div id="accordion">
               <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
-                    <button
-                      class="btn btn-link"
-                      data-toggle="collapse"
-                      data-target="#collapsePreview"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      Preview
-                    </button>
-                  </h5>
-                </div>
                 <div
                   id="collapsePreview"
                   class="collapse show"
                   aria-labelledby="headingOne"
                   data-parent="#accordion"
-                  style=""
                 >
                   <div class="card-body">
                     <div class="form-group">
@@ -667,6 +654,7 @@
                         id="preview"
                         rows="10"
                         readonly="readonly"
+                        value=""
                       ></textarea>
                     </div>
                   </div>
@@ -675,52 +663,46 @@
             </div>
           </div>
         </div>
-        <div class="text-center mt-4 mb-4">
-          <a
-            id="generate"
-            class="btn btn-primary btn-lg"
-            role="button"
-            download="vcard.vcf"
-            href="blob:https://vcardmaker.com/5980a921-0bf7-4fdb-9145-3a36bea5bff1"
-            >Generate</a
-          >
+      </div>
+      <div class="text-center mt-4 mb-4">
+        <button class="btn btn-primary btn-lg" onclick="generateQR()">
+          Generate
+        </button>
+        <div id="qrcode-container" style="margin-top: 30px"></div>
+      </div>
+
+      <script>
+        (function (d) {
+          var wf = d.createElement("script"),
+            s = d.scripts[0];
+          wf.src =
+            "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
+          wf.async = true;
+          s.parentNode.insertBefore(wf, s);
+        })(document);
+      </script>
+      <script src="./index_files/jquery.min.js.download"></script>
+      <script
+        src="./index_files/bootstrap.min.js.download"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"
+      ></script>
+      <script async="" src="./index_files/bundle.js.download"></script>
+      <div id="volume-booster-visusalizer">
+        <div class="sound">
+          <div class="sound-icon"></div>
+          <div class="sound-wave sound-wave_one"></div>
+          <div class="sound-wave sound-wave_two"></div>
+          <div class="sound-wave sound-wave_three"></div>
+        </div>
+        <div class="segments-box">
+          <div data-range="1-20" class="segment"><span></span></div>
+          <div data-range="21-40" class="segment"><span></span></div>
+          <div data-range="41-60" class="segment"><span></span></div>
+          <div data-range="61-80" class="segment"><span></span></div>
+          <div data-range="81-100" class="segment"><span></span></div>
         </div>
       </div>
-    </div>
-    
-    <script>
-      (function (d) {
-        var wf = d.createElement("script"),
-          s = d.scripts[0];
-        wf.src =
-          "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js";
-        wf.async = true;
-        s.parentNode.insertBefore(wf, s);
-      })(document);
-    </script>
-    <script src="./index_files/jquery.min.js.download"></script>
-    <script
-      src="./index_files/bootstrap.min.js.download"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script async="" src="./index_files/bundle.js.download"></script>
-    <div id="volume-booster-visusalizer">
-      <div class="sound">
-        <div class="sound-icon"></div>
-        <div class="sound-wave sound-wave_one"></div>
-        <div class="sound-wave sound-wave_two"></div>
-        <div class="sound-wave sound-wave_three"></div>
-      </div>
-      <div class="segments-box">
-        <div data-range="1-20" class="segment"><span></span></div>
-        <div data-range="21-40" class="segment"><span></span></div>
-        <div data-range="41-60" class="segment"><span></span></div>
-        <div data-range="61-80" class="segment"><span></span></div>
-        <div data-range="81-100" class="segment"><span></span></div>
-      </div>
-    </div>
-    
     </div>
   </body>
 </html>

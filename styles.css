@@ -1230,3 +1230,20 @@ body {
 .fa-icon svg {
   fill: currentColor;
 }
+
+.form-container {
+  display: flex !important;
+  max-width: 100vw;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+}
+
+.form-container > * {
+  min-width: 500px !important;
+  margin: 16px;
+}
+
+body {
+  background-color: #343541;
+}
